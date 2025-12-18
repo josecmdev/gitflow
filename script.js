@@ -7,8 +7,15 @@ document.addEventListener('DOMContentLoaded', function() {
 var btn = document.getElementById('btnClick');
 btn.addEventListener('click', function() {
     document.getElementById('output').textContent = '¡Botón clicado!';
-    btn.classList.add('btn--clicked');
-    setTimeout(function(){ btn.classList.remove('btn--clicked'); }, 220);
+});
+
+// Animación de click para todos los botones (incluye el submit convertido)
+document.addEventListener('click', function(e) {
+    var el = e.target;
+    if (el.tagName === 'BUTTON') {
+        el.classList.add('btn--clicked');
+        setTimeout(function(){ el.classList.remove('btn--clicked'); }, 220);
+    }
 });
 
 //Este es un metodo
